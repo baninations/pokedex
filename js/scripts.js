@@ -40,9 +40,8 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
-
+  // this function shows the details of the pokemon in a modal dynamically.
   function showDetails(pokemon) {
-    //here
     loadDetails(pokemon).then(function () {
       let modalContainer = document.querySelector("#modal-container");
 
