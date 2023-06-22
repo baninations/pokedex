@@ -47,9 +47,20 @@ body {
   box-sizing: border-box;
   background: #fff;
   padding: 15px;
+  width: 400px;
+  max-width: 100%;
+  height: 250px;
+  max-height: 100%;
+  text-align: left;
+
+  /* margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 15px;
   width: 100%;
   max-width: 700px;
-  text-align: left;
+  text-align: left; */
 }
 
 .modal-close {
@@ -83,7 +94,7 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
 
-  /* to show it above other content */
+  /* to show the modal above other content */
   z-index: 999; 
 
   /* to allow scrolling if the screen is not high enough*/
