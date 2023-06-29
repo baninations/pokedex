@@ -1,7 +1,3 @@
-// showModal function as well as the two event listeners
-// should be placed outside of showDetails function.
-// Kindly refactor the code.
-
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
@@ -30,7 +26,6 @@ let pokemonRepository = (function () {
     });
 
     button.innerText = pokemon.name;
-    console.log(pokemon);
     li.appendChild(button);
     ul.appendChild(li);
   }
@@ -53,30 +48,40 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
-
-  function showModal(title, text, imageUrl) {
-    let modalBody = document.querySelector(".modal-body");
-    let modalTitle = document.querySelector(".modal-title");
-    let modalHeader = document.querySelector(".modal-header");
+  function showModal(item) {
+    let modalBody = $(".modal-body");
+    let modalTitle = $(".modal-title");
 
     modalTitle.empty();
     modalBody.empty();
 
-    // button.setAttribute("data-toggle", "modal");
+    let nameElement = $("<h1>" + item.name + "</h1>");
+
+    let imageElementFront = $('<img class=modal-img style="width:100%">');
+    imageElementFront.attr("src", item.imageUrlFront);
+
+    let imgContainer = $("<div class='img-container'></div>");
+    let textContainer = $("<div class='text-container'></div>");
+
+    let heightElement = $(
+      "<p class='height-element'>" + "Height: " + item.height + "</p>"
+    );
+    let weightElement = $(
+      "<p class='weight-element'>" + "Weight: " + item.weight + "</p>"
+    );
 
     modalTitle.append(nameElement);
+    modalBody.append(imgContainer);
+    modalBody.append(textContainer);
+    imgContainer.append(imageElementFront);
+    textContainer.append(heightElement);
+    textContainer.append(weightElement);
   }
-
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
-      hideModal();
-    }
-  });
 
   // this function shows the details of the pokemon in a modal dynamically.
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      showModal(pokemon.name, "height is: " + pokemon.height, pokemon.imageUrl);
+      showModal(pokemon);
     });
   }
 
@@ -87,8 +92,9 @@ let pokemonRepository = (function () {
         return response.json();
       })
       .then(function (details) {
-        item.imageUrl = details.sprites.front_default;
+        item.imageUrlFront = details.sprites.front_default;
         item.height = details.height;
+        item.weight = details.weight;
         item.types = details.types;
       })
       .catch(function (e) {
