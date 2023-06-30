@@ -85,6 +85,30 @@ let pokemonRepository = (function () {
     });
   }
 
+  //
+  var searchItem = () => {
+    let searchInput = document.querySelector("#input").value.toLowerCase();
+    let listArray = document.querySelectorAll(".list-group-item");
+
+    console.log(searchInput);
+    console.log(listArray);
+
+    listArray.forEach((pokemon) => {
+      let listBtn = pokemon
+        .querySelector(".btn-secondary")
+        .innerText.toLowerCase();
+      if (listBtn.includes(searchInput)) {
+        pokemon.style.display = "inline-block";
+      } else {
+        pokemon.style.display = "none";
+      }
+    });
+  };
+
+  let searchInput = document.querySelector("#input");
+  searchInput.addEventListener("input", () => searchItem());
+  //
+
   function loadDetails(item) {
     let url = item.detailsUrl;
     return fetch(url)
