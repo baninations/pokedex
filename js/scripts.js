@@ -8,6 +8,7 @@ let pokemonRepository = (function () {
     } else {
       console.log("pokemon is not correct");
     }
+    console.log(pokemon.name);
   }
   function addListItem(pokemon) {
     let ul = document.querySelector(".list-group");
@@ -48,6 +49,7 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
+
   function showModal(item) {
     let modalBody = $(".modal-body");
     let modalTitle = $(".modal-title");
@@ -84,30 +86,6 @@ let pokemonRepository = (function () {
       showModal(pokemon);
     });
   }
-
-  //
-  var searchItem = () => {
-    let searchInput = document.querySelector("#input").value.toLowerCase();
-    let listArray = document.querySelectorAll(".list-group-item");
-
-    console.log(searchInput);
-    console.log(listArray);
-
-    listArray.forEach((pokemon) => {
-      let listBtn = pokemon
-        .querySelector(".btn-secondary")
-        .innerText.toLowerCase();
-      if (listBtn.includes(searchInput)) {
-        pokemon.style.display = "inline-block";
-      } else {
-        pokemon.style.display = "none";
-      }
-    });
-  };
-
-  let searchInput = document.querySelector("#input");
-  searchInput.addEventListener("input", () => searchItem());
-  //
 
   function loadDetails(item) {
     let url = item.detailsUrl;
