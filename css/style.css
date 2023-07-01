@@ -14,7 +14,8 @@ ul{
 .pokemon-list{
     width: fit-content;
     height: auto;
-    border: 1px solid black;
+    border: 5px solid blue;
+    border-radius: 5px;
     padding: 10px;
 }
 .list-group-item {
@@ -26,4 +27,11 @@ ul{
 }
 .navbar {
   margin: 5px;
+  background-color: grey;
+}
+#button-random {
+  margin-bottom: 10px;
+  background-color: blue;
+  color: yellow;
+  font-weight: bold;
 }

@@ -14,6 +14,7 @@ let pokemonRepository = (function () {
     let ul = document.querySelector(".list-group");
     let li = document.createElement("li");
     let button = document.createElement("button");
+    let randomButton = document.querySelector("#button-random");
 
     li.classList.add("list-group-item");
 
@@ -21,9 +22,22 @@ let pokemonRepository = (function () {
     button.classList.add("btn-primary");
     button.setAttribute("data-toggle", "modal");
     button.setAttribute("data-target", "#exampleModal");
+    button.style.backgroundColor = "black";
+
+    randomButton.classList.add("btn");
+    randomButton.classList.add("btn-primary");
+    randomButton.setAttribute("data-toggle", "modal");
+    randomButton.setAttribute("data-target", "#exampleModal");
+    randomButton.style.backgroundColor = "black";
 
     button.addEventListener("click", (e) => {
       showDetails(pokemon);
+    });
+
+    randomButton.addEventListener("click", (e) => {
+      let randomNumber = Math.floor(Math.random() * 149);
+      console.log(randomNumber);
+      showDetails(pokemonList[randomNumber]);
     });
 
     button.innerText = pokemon.name;
