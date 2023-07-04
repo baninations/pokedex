@@ -73,7 +73,9 @@ let pokemonRepository = (function () {
 
     let nameElement = $("<h1>" + item.name + "</h1>");
 
-    let imageElementFront = $('<img class=modal-img style="width:100%">');
+    let imageElementFront = $(
+      '<img class=modal-img alt="pokemon image" style="width:100%">'
+    );
     imageElementFront.attr("src", item.imageUrlFront);
 
     let imgContainer = $("<div class='img-container'></div>");
