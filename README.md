@@ -50,3 +50,12 @@ The Pokédex JavaScript App is a small web application built with HTML, CSS, and
 - `css/` - CSS styles for the app.
 - `js/` - JavaScript code for loading data and handling interactions.
 - `README.md` - Project documentation.
+
+## Screenshots
+ ![Desktop](https://github.com/baninations/pokedex/blob/main/screenshots/desktop.png)
+
+![Selected Pokemon](https://github.com/baninations/pokedex/blob/main/screenshots/pokemon.png)
+
+![Mobile](https://github.com/baninations/pokedex/blob/main/screenshots/mobile.png)
+
+
