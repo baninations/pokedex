@@ -33,7 +33,11 @@ The Pokédex JavaScript App is a small web application built with HTML, CSS, and
 - Deploy the app to a publicly accessible platform like GitHub Pages.
 - Ensure cross-browser compatibility with Chrome, Firefox, Safari, Edge, and Internet Explorer 11.
 
-## Technologies used: HTML, CSS, JavaScript, Ajax for asynchronous API data fetching.
+## Technologies used:
+-HTML 
+-CSS
+-JavaScript
+-Ajax for asynchronous API data fetching
 
 ## Getting Started
 
