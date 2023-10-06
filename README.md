@@ -1,5 +1,5 @@
 # Pokédex JavaScript App
-
+## The site is live: https://baninations.github.io/pokedex/
 ## Overview
 
 The Pokédex JavaScript App is a small web application built with HTML, CSS, and JavaScript. It loads data from an external API and allows users to view a list of data items (in this case, Pokémon) and see more details for a selected data item.
